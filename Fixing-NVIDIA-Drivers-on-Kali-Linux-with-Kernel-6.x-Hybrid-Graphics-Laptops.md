@@ -16,10 +16,9 @@ Lenovo Legion 5 laptops with hybrid graphics (AMD CPU with iGPU + NVIDIA dGPU) e
 
 ## Prerequisites
 
-- Lenovo Legion 5 (or similar hybrid graphics laptop)
-- NVIDIA GPU (tested with RTX 4060)
-- AMD CPU with integrated graphics
-- Kali Linux (or Debian-based distribution)
+- Access to terminal
+- Power
+- Ethernet or Wifi connection
 
 ## The Complete Fix
 
