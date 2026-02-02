@@ -1,5 +1,15 @@
 # Fix External Monitor Black Screen on Kali Linux (Hybrid AMD/Intel + NVIDIA)
 
+## Table of Contents
+- [Problem Overview](#problem-overview)
+- [Symptoms](#symptoms)
+- [TL;DR](#tldr-quick-fix)
+- [The Complete Fix](#the-complete-fix)
+- [Verification](#verification)
+- [Troubleshooting](#troubleshooting)
+- [For Intel CPU Users](#for-intel-cpu-users)
+- [FAQ](#faq)
+
 ## Problem Overview
 
 This guide fixes a black screen issue on Kali Linux 6.x when using NVIDIA GPUs on hybrid laptops (AMD or Intel iGPU + NVIDIA dGPU), especially when external monitors are connected. The problem typically appears during boot with ACPI BIOS errors and amdgpu DisplayPort failures, causing the system to hang before the graphical login screen.
@@ -11,7 +21,7 @@ This guide fixes a black screen issue on Kali Linux 6.x when using NVIDIA GPUs o
 - Display only works after manually running `sudo startx`
 - Boot errors showing: `amdgpu ERROR: dp_get_max_link_enc_cap: Max link encoder caps unknown`
 
-### Boot Error Example (What You Will See after you try to install nvidia-drivers
+### Boot Error Example (What You Will See After Installing NVIDIA Drivers)
 
 ![Kali Linux boot black screen showing ACPI BIOS Error and amdgpu dp_get_max_link_enc_cap on NVIDIA hybrid laptop](Photo.png)
 
@@ -337,8 +347,8 @@ lsmod | grep i915
 
 ## FAQ
 
-### Does this work on Debian or Ubuntu?
-Yes. The same fix applies to Debian-based systems with kernel 6.x and hybrid graphics.
+### Does this work on other Linux distros?
+Yes, any Debian-based distro (Ubuntu, Pop!_OS, etc.) with kernel 6.x will work.
 
 ### Will this reduce battery life?
 Yes. Discrete GPU mode keeps the NVIDIA GPU powered at all times.
@@ -346,3 +356,37 @@ Yes. Discrete GPU mode keeps the NVIDIA GPU powered at all times.
 ### Why does this only happen with external monitors?
 External ports are often wired to the dGPU while the kernel still initializes the iGPU, causing a DisplayPort routing failure.
 All other steps remain identical to the AMD instructions above.
+
+### Can I switch back to hybrid mode later?
+Yes, but you'll need to remove the blacklists and reconfigure. Not recommended if you use external monitors frequently.
+
+### What if I have multiple NVIDIA GPUs?
+This guide assumes single dGPU setups. Multi-GPU configurations may need additional Xorg configuration.
+
+### My laptop model isn't listed - will this work?
+If you have hybrid graphics (AMD/Intel iGPU + NVIDIA dGPU), this should work. Report your success/failure in Issues.
+
+## Contributing
+
+Found this helpful? Please:
+- Star this repository
+- Report issues with your hardware specs
+- Submit PRs with improvements
+- Share your experience in Discussions
+
+### Tested Hardware
+Help others by reporting what worked:
+- Laptop Model:
+- GPU:
+- CPU:
+- Kernel Version:
+- Success: Yes/No
+
+## License
+
+This documentation is released under the [MIT License](LICENSE).
+
+---
+
+**Maintained by:** [@firdeus-dikellari](https://github.com/firdeus-dikellari)  
+**Last Updated:** February 2025
