@@ -11,6 +11,9 @@ Lenovo Legion 5 laptops with hybrid graphics (AMD CPU with iGPU + NVIDIA dGPU) e
 - Display only works after manually running `sudo startx`
 - Boot errors showing: `amdgpu ERROR: dp_get_max_link_enc_cap: Max link encoder caps unknown`
 
+### Boot Error Example (What You Will See after you try to install nvidia-drivers)
+![Kernel boot errors showing ACPI and amdgpu issues](Photo.png)
+
 ## Prerequisites
 
 - Lenovo Legion 5 (or similar hybrid graphics laptop)
