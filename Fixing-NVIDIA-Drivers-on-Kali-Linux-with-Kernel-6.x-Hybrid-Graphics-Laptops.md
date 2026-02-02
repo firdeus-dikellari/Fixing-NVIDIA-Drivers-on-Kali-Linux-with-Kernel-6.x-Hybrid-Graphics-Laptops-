@@ -21,6 +21,17 @@ This guide fixes a black screen issue on Kali Linux 6.x when using NVIDIA GPUs o
 - Power
 - Ethernet or Wifi connection
 
+## TL;DR (Quick Fix)
+
+If you have a hybrid laptop and get a black screen on boot with external monitors:
+1. Force **Discrete GPU mode** in BIOS
+2. Install NVIDIA drivers
+3. Blacklist `amdgpu` or `i915`
+4. Enable `nvidia-drm.modeset=1`
+5. Use LightDM
+
+This prevents the iGPU from initializing and breaking NVIDIA display routing.
+
 ## The Complete Fix
 
 ### Step 1: Configure BIOS
@@ -323,4 +334,15 @@ sudo update-initramfs -u
 lsmod | grep i915
 ```
 
+
+## FAQ
+
+### Does this work on Debian or Ubuntu?
+Yes. The same fix applies to Debian-based systems with kernel 6.x and hybrid graphics.
+
+### Will this reduce battery life?
+Yes. Discrete GPU mode keeps the NVIDIA GPU powered at all times.
+
+### Why does this only happen with external monitors?
+External ports are often wired to the dGPU while the kernel still initializes the iGPU, causing a DisplayPort routing failure.
 All other steps remain identical to the AMD instructions above.
