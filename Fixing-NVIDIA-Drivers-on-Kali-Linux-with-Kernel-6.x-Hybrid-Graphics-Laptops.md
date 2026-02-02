@@ -11,9 +11,9 @@ This guide fixes a black screen issue on Kali Linux 6.x when using NVIDIA GPUs o
 - Display only works after manually running `sudo startx`
 - Boot errors showing: `amdgpu ERROR: dp_get_max_link_enc_cap: Max link encoder caps unknown`
 
-### Boot Error Example (What You Will See after you try to install nvidia-drivers!
+### Boot Error Example (What You Will See after you try to install nvidia-drivers
 
-[Kali Linux boot black screen showing ACPI BIOS Error and amdgpu dp_get_max_link_enc_cap on NVIDIA hybrid laptop](Photo.png)
+![Kali Linux boot black screen showing ACPI BIOS Error and amdgpu dp_get_max_link_enc_cap on NVIDIA hybrid laptop](Photo.png)
 
 ## Prerequisites
 
