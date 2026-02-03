@@ -231,6 +231,8 @@ nvidia-settings
 xrandr --output HDMI-1 --auto --right-of eDP-1
 ```
 
+![Manage your displays through Nvidia X Server](images/boot-errors/Screenshot_2026-02-03_08_51_20.png)
+
 ## Important Notes
 
 - **Battery Life:** Discrete mode significantly reduces battery life (30-50%) since the NVIDIA GPU is always active
